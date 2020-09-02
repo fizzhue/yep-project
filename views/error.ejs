@@ -10,3 +10,10 @@
   </div><!-- end .container-fluid -->
 </div><!-- end #main -->
 <%- include('partials/footer'); %>
+
+
+<% if (locals.errors && locals.errors.xyz) { %>
+	<% locals.errors.xyz.forEach(function(error) { %>
+		<p class="alert alert-primary" role="alert"><%= error %></p>
+	<% }) %>
+<% } %>

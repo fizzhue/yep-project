@@ -7,8 +7,9 @@
       </div>
 
       <main role="main" class="col-md-9">
-        <h2>Login</h2>
-        <form action="/login" method="post">
+        
+        <h2>Register</h2>
+        <form action="/register" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -17,15 +18,19 @@
             <label for="exampleInputPassword1">Password</label>
             <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
-          <% if (locals.errors && locals.errors.login) { %>
-            <% locals.errors.login.forEach(function(error) { %>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Re-enter Password</label>
+            <input name="passwordConfirm" type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-enter Password">
+          </div>
+          <% if (locals.errors && locals.errors.register) { %>
+            <% locals.errors.register.forEach(function(error) { %>
               <p class="alert alert-primary" role="alert"><%= error %></p>
             <% }) %>
           <% } %>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </main>
-    </div> <!-- end .row --> 
-  </div><!-- end .container-fluid -->
-</div><!-- end #main -->
+    </div>
+  </div>
+</div>
 <%- include('partials/footer'); %>
